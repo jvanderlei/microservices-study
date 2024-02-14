@@ -26,7 +26,7 @@ public class ProductRepository : IProductRepository
         return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0; 
     }
 
-    public async Task<IEnumerable<Product>> GerProductByCategory(string categoryName)
+    public async Task<IEnumerable<Product>> GetProductByCategory(string categoryName)
     {
         FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(p => p.Category, categoryName);
 
